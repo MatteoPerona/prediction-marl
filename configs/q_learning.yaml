@@ -1,0 +1,29 @@
+# Q-learning agent configuration
+# ================================
+
+market:
+  b: 2.0
+
+simulation:
+  n_episodes: 500
+  n_rounds: 50
+  true_prob: 0.7
+  true_prob_range: [0.2, 0.8]
+  noise_std: 0.1
+  seed: 42
+
+agents:
+  type: q_learning
+  n_agents: 10
+  trade_size: 0.5
+
+  threshold: 0.02
+
+  q_learning:
+    n_price_bins: 20
+    n_signal_bins: 10
+    alpha: 0.1
+    gamma: 0.99
+    epsilon_start: 1.0
+    epsilon_end: 0.05
+    epsilon_decay: 0.995

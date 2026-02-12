@@ -1,0 +1,31 @@
+# Default configuration for prediction market simulation
+# =====================================================
+
+market:
+  b: 2.0  # LMSR liquidity parameter
+
+simulation:
+  n_episodes: 200
+  n_rounds: 50
+  true_prob: 0.7        # fixed true probability (null = sample from range)
+  true_prob_range: [0.2, 0.8]
+  noise_std: 0.1
+  seed: 42
+
+agents:
+  type: zero_intelligence  # "zero_intelligence" or "q_learning"
+  n_agents: 10
+  trade_size: 1.0
+
+  # ZI-specific
+  threshold: 0.02
+
+  # Q-learning-specific
+  q_learning:
+    n_price_bins: 20
+    n_signal_bins: 10
+    alpha: 0.1
+    gamma: 0.99
+    epsilon_start: 1.0
+    epsilon_end: 0.05
+    epsilon_decay: 0.995
